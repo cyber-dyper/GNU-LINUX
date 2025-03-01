@@ -1,2 +1,2 @@
-
-wget https://www.kali.org/get-kali/
+wget -O kali-linux.iso \
+  https://cdimage.kali.org/kali-2023.1/kali-linux-2023.1-installer-amd64.iso
