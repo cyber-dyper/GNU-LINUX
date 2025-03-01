@@ -1,0 +1,2 @@
+wget -O linuxmint-21.2-cinnamon-64bit.iso \
+  https://mirrors.edge.kernel.org/linuxmint/stable/21.2/linuxmint-21.2-cinnamon-64bit.iso
