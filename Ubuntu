@@ -1,3 +1,2 @@
-
-
-https://ubuntu.com/download/desktop 
+wget -O ubuntu-22.04-desktop.iso \
+  https://releases.ubuntu.com/22.04/ubuntu-22.04.3-desktop-amd64.iso
