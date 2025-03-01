@@ -1,0 +1,2 @@
+wget -O openSUSE-Leap-15.5-DVD.iso \
+  https://download.opensuse.org/distribution/leap/15.5/iso/openSUSE-Leap-15.5-DVD-x86_64-Current.iso
