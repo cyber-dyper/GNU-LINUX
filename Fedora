@@ -1,0 +1,2 @@
+wget -O Fedora-Workstation-38.iso \
+  https://download.fedoraproject.org/pub/fedora/linux/releases/38/Workstation/x86_64/iso/Fedora-Workstation-Live-38-1-6.iso
