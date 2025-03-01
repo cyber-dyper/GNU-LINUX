@@ -1,0 +1,2 @@
+wget -O manjaro-gnome-23.0.iso \
+  https://download.manjaro.org/gnome/23.0/manjaro-gnome-23.0-230816-linux64.iso
