@@ -1,358 +1,142 @@
-# GNU-Linux
-# 🐧 Guide
-# Télécharger et Installer VirtualBox sur Windows, macOS et Linux
+# 🐧 **Guide GNU-LINUX**  
+## 🧭 **Choisir la distribution Linux qui répond à tes besoins !**  
 
-Bienvenue dans ce guide détaillé sur GNU/Linux et ses différentes distributions.
+Bienvenue dans ce guide détaillé sur **GNU/Linux** et ses différentes **distributions**.  
+Je vais t'expliquer les **différences entre chaque distribution Linux** et pourquoi il en existe autant ! 
 
-Je vais t'expliquer comment **télécharger** et **installer VirtualBox** un outil qui va te permetre de réaliser ta **première virtualisation** !
+### 🤔 **Au fait, Linux c'est quoi ?** 
+
+👉 **Linux** est un `noyau` utilisé par de nombreuses distributions (*distros*), qui combinent le noyau avec des **outils système**, un **gestionnaire de paquets** et parfois une **interface graphique (GUI)**.  
+
+Chaque **distribution** a sa propre **philosophie**, un **public cible** spécifique et une gestion des **mises à jour unique**.  
+
+Si les mots `noyau`, `gestionnaire de paquets`, `GUI` ou encore `distribution` ne te parlent pas, pas d'inquiétude : je vais tout t'expliquer ! 🧠
 
 ---
 
-## 📚 Table des Matières
+## 📚 **Table des Matières**
 
+- [🧠 Qu'est-ce qu'un noyau (kernel) ?](#-qu'est-ce-qu'un-noyau-kernel)
+- [📦 Qu'est-ce qu'un paquet (package) ?](#-qu'est-ce-qu'un-paquet-package)
+- [🖥️ Qu'est-ce qu'une interface graphique (GUI) ?](#-qu'est-ce-qu'une-interface-graphique-gui)
+- [📀 Qu'est-ce qu'une distribution Linux ?](#-qu'est-ce-qu'une-distribution-linux)
 - [🪖 Principales distributions](#-principales-distributions)
-  - [🎯 Choisir selon les besoins](#-choisir-selon-les-besoins)
-- [🗂 Structure du Dépôt](#-structure-du-dépôt)
-- [🔍 Prérequis Logiciels](#-prérequis-logiciels)
-  - [🔧 Comment vérifier si wget ou curl est installé ?](#-comment-vérifier-si-wget-ou-curl-est-installé-)
-  - [🚀 Installer wget ou curl sur votre Système](#-installer-wget-ou-curl-sur-votre-système)
-    - [🪟 Pour Windows](#-pour-windows)
-    - [🍏 Pour macOS](#-pour-macos)
-    - [🐧 Pour Linux](#-pour-linux)
-- [🌐 Télécharger VirtualBox depuis le Navigateur](#-télécharger-virtualbox-depuis-le-navigateur)
-- [💻 Télécharger VirtualBox depuis le Terminal](#-télécharger-virtualbox-depuis-le-terminal)
-  - [🪟 Pour Windows](#-pour-windows-terminal)
-  - [🍏 Pour macOS](#-pour-macos-terminal)
-  - [🐧 Pour Linux](#-pour-linux-terminal)
-- [✅ Vérifier l'Installation](#-vérifier-linstallation)
+- [🎯 Choisir selon les besoins](#-choisir-selon-les-besoins)
+- [🧪 Découvre ton premier labo virtuel !](#-découvre-ton-premier-labo-virtuel-)
 - [📚 Ressources Utiles](#-ressources-utiles)
-- [💻 Lancer ta première machine virtuelle (VM) sur VirtualBox](#-lancer-ta-première-machine-virtuelle-vm-sur-virtualbox)
-    - [🪟 Pour Windows](#-pour-windows)
-    - [🍏 Pour macOS](#-pour-macos)
-    - [🐧 Pour Linux](#-pour-linux)
-- [🆕 Créer une nouvelle VM](#-créer-une-nouvelle-vm)
-  - [💿 Monter l'ISO depuis le sous-répertoire](#-monter-liso-depuis-le-sous-répertoire)
-  - [🚀 Démarrer la VM](#-démarrer-la-vm)
-- [📁 Référence aux sous-répertoires d'ISO](#-référence-aux-sous-répertoires-diso)
 
 ---
 
+## 🧠 **Qu'est-ce qu'un noyau (kernel) ?**  
 
-Linux est un noyau utilisé par de nombreuses distributions (distros), qui combinent le noyau avec des outils système, un gestionnaire de paquets et parfois une interface graphique. Chaque distribution a une philosophie, un public cible et une gestion des mises à jour spécifiques.
+Le **noyau** est le **cœur** d'un système d'exploitation.  
+Il agit comme un **intermédiaire** entre le matériel de ton ordinateur (*processeur*, *mémoire*, *disque dur*) et les logiciels que tu utilises.
 
-
-
-## 🪖 Principales distributions
-
-`Debian` : Ultra stable, pour les serveurs et les environnements de production. Moins rapide sur les mises à jour (MAJs).
-
-`Ubuntu` : Basée sur Debian, pour les débutants. Polyvalente (desktop, serveur, cloud).
-
-`Kali Linux` : Spécialisée pour les Pentester. Préinstallée avec leurs outils spécifiques (Metasploit, Nmap)
-
-`Linux Mint` : Basée sur Ubuntu, intuitive, adaptée aux anciens utilisateurs de Windows.
-
-`Fedora` : Parrainée par Red Hat, convient aux développeurs et aux tests de nouvelles fonctionnalités.
-
-`OpenSUSE` : 2 versions : Leap (stable) ou Tumbleweed (MAJs fréquents) avec un outils avancés d’administration Yast.
-
-`Arch Linux` : Rolling release (MAJs fréquents), technique car très personnalisable.
-
-`Manjaro` : Basée sur Arch, facile avec un installateur graphique.
-
-`CentOS` : Était gratuite et basé sur Red Hat Enterprise Linux (RHEL), remplacée par AlmaLinux et Rocky Linux car plus stable.
-
-
-
-## 🎯 Choisir selon les besoins
-
-**Débutants** : Ubuntu, Linux Mint.
-
-**Serveurs/entreprises** : Debian, Ubuntu Server, CentOS, AlmaLinux.
-
-**Pentesting/Sécurité**: Kali Linux.
-
-**Développement** : Fedora, Ubuntu.
-
-**Personnalisation/Apprentissage** : Arch Linux, Manjaro.
-
-Chaque distribution offre des avantages spécifiques selon que vous privilégiez la stabilité, la nouveauté, la sécurité ou la personnalisation. Choisissez celle qui correspond le mieux à vos besoins !
-
-
-
-## 🗂 Structure du Dépôt
-
-Ce dépôt GitHub contient un répertoire **GNU-Linux** avec plusieurs sous-répertoires dédiés à différentes distributions Linux :
-
-- `Kali-Linux`
-- `Arch-Linux`
-- `Debian`
-- `Fedora`
-- `Linux-Mint`
-- `Manjaro`
-- `OpenSUSE`
-- `Ubuntu`
-
-📁 **Chaque sous-répertoire** contient un fichier avec les commandes `wget` nécessaires pour télécharger la distribution depuis le **terminal**.
+- 📦 Le noyau gère l'utilisation de la **mémoire**, l'exécution des **programmes** et la communication avec les **périphériques** (*souris*, *clavier*, *écran*).  
+- 🛠️ En résumé, c'est le **chef d'orchestre** qui fait fonctionner ton ordinateur de manière fluide.
 
 ---
 
-## 🔍 Prérequis Logiciels
+## 📦 **Qu'est-ce qu'un paquet (package) ?**  
 
-Pour télécharger VirtualBox depuis le terminal, il vous faut :
+Un **paquet** est un **fichier contenant un logiciel** ou un outil prêt à être installé sur ton système **Linux**.
 
-- Soit `wget`, soit `curl`, deux outils permettant de récupérer des fichiers depuis le web.
-- Un accès administrateur pour installer VirtualBox sur votre système.
-
-### 🔧 Comment vérifier si `wget` ou `curl` est installé ?
-
-Ouvrez un **terminal** (ou PowerShell sous Windows) et tapez :
-
-`wget --version` ou `curl --version` 
-
-Si l'une des commandes affiche une version, c'est tout bon ! Sinon, suivez les instructions ci-dessous pour installer ces outils.
-
-### 🚀 Installer wget ou curl sur votre Système
-
-### 🪟 Pour Windows
-
-Vérifier si curl est installé (déjà présent sur Windows 10+ en PowerShell) :
-`curl --version`
-Installer wget (optionnel) :
-Téléchargez l'exécutable depuis le site officiel :
-👉 Télécharger wget pour Windows
-Vérifier l'installation :
-`wget --version`
-
-### 🍏 Pour macOS
-
-Installer 🍺 Homebrew (si non installé) :
-🍺 Homebrew est un gestionnaire de paquets qui facilite l'installation de logiciels :
-```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-ou sinon directement depuis 🍺 [Site Officiel : Brew.sh](https://brew.sh)
-
-Installer wget avec Homebrew :
-```bash
-brew install wget
-```
-Vérifier l'installation :
-`wget --version`ou `curl --version`, curl est souvent déjà installé sur macOS
-
-### 🐧 Pour Linux
-
-Vérifier si wget ou curl est déjà présent :
-`wget --version`ou `curl --version`
-
-Installer wget ou curl selon votre distribution :
-Pour Debian/Ubuntu :
-```bash
-sudo apt update
-sudo apt install wget curl -y
-```
-Pour Fedora :
-```bash
-sudo dnf install wget curl -y
-```
-Pour Arch Linux :
-```bash
-sudo pacman -S wget curl
-```
-Vérifier l'installation :
-`wget --version`ou `curl --version`
-
-## 🌐 Télécharger VirtualBox depuis le Navigateur
-
-Le moyen le plus simple pour télécharger VirtualBox est de visiter le site officiel :
-
-🌍 [Page de téléchargement VirtualBox](https://www.virtualbox.org/wiki/Downloads)
-
-
-Une fois téléchargé, lancez simplement le fichier pour démarrer l'installation.
-
-## 💻 Télécharger VirtualBox depuis le Terminal
-
-### 🪟 Pour Windows (Terminal)
-Avec curl
-```bash
-curl.exe -o VirtualBox-7.0.8-Win.exe `
-    https://download.virtualbox.org/virtualbox/7.0.8/VirtualBox-7.0.8-156879-Win.exe
-```
-Ou avec wget (si installé)
-```bash
-wget -O VirtualBox-7.0.8-Win.exe `
-    https://download.virtualbox.org/virtualbox/7.0.8/VirtualBox-7.0.8-156879-Win.exe
-```
-
-Lancer l'installation
-`.\VirtualBox-7.0.8-Win.exe`
-
-### 🍏 Pour macOS (Terminal)
-Télécharger l'image disque
-```bash
-curl -o VirtualBox-7.0.8-OSX.dmg \
-    https://download.virtualbox.org/virtualbox/7.0.8/VirtualBox-7.0.8-156879-OSX.dmg
-```
-
-Ouvrir le fichier .dmg
-`open VirtualBox-7.0.8-OSX.dmg`
-
-### 🐧 Pour Linux (Terminal)
-Pour Debian/Ubuntu
-```bash
-wget -O virtualbox-7.0.8.deb \
-    https://download.virtualbox.org/virtualbox/7.0.8/virtualbox-7.0.8_ubuntu_jammy_amd64.deb
-```
-`sudo apt install ./virtualbox-7.0.8.deb`
-
-Pour Fedora
-```bash
-wget -O virtualbox-7.0.8.rpm \
-    https://download.virtualbox.org/virtualbox/7.0.8/VirtualBox-7.0-7.0.8_156879_fedora36-1.x86_64.rpm
-```
-`sudo dnf install ./virtualbox-7.0.8.rpm`
-
-## ✅ Vérifier l'Installation
-
-
-Windows : Recherchez Oracle VM VirtualBox dans le menu Démarrer 🔎.
-
-macOS : Allez dans le dossier Applications 📁, lancez VirtualBox.
-
-Linux : Exécutez la commande virtualbox dans un terminal 🖥️.
-
-
-
-# 💻 Lancer ta première machine virtuelle (VM) sur VirtualBox
-
-Une fois **VirtualBox** installé sur ton système d'exploitation (**Windows**, **macOS** ou **Linux**), suis ces étapes pour créer et lancer ta première **VM**. 
-
-Les **images ISO** nécessaires pour tes systèmes d'exploitation préférés se trouvent dans les **sous-répertoires** de ce dépôt.
+- 💡 Il contient non seulement le **programme**, mais aussi tout ce dont il a besoin pour fonctionner (**dépendances**).  
+- 🛍️ Les distributions Linux utilisent un **gestionnaire de paquets** (*APT*, *YUM*, *Pacman*) pour installer, mettre à jour ou supprimer facilement des logiciels.
 
 ---
 
-## 🪟 Pour Windows
+## 🖥️ **Qu'est-ce qu'une interface graphique (GUI) ?**  
 
-1. **Ouvre VirtualBox** : 
-   - Recherche "Oracle VM VirtualBox" dans le menu **Démarrer** et lance-le.
+Une **interface graphique** est ce qui te permet d'utiliser ton ordinateur avec des **icônes**, des **fenêtres** et des **menus**, au lieu de taper des **commandes** dans un terminal.
 
-2. **Créer une nouvelle VM** : 
-   - Clique sur **"New"**.
-
-3. **Configurer la VM** :
-   - **Nom** : Choisis un nom pour la VM (ex. : "Ubuntu VM").
-   - **Type** : Sélectionne le type de système d'exploitation (ex. : Linux).
-   - **Version** : Choisis la version exacte (ex. : Ubuntu 64-bit).
-
-4. **Allouer la mémoire RAM** : 
-   - Sélectionne la quantité de **RAM** (au moins **2 Go** pour un Linux léger).
-
-5. **Créer un disque dur virtuel** :
-   - Sélectionne **"Create a virtual hard disk now"**.
-   - Choisis le type de disque **VDI (VirtualBox Disk Image)**.
-   - Privilégie un disque **dynamique** (pour économiser de l'espace disque).
-   - Défini la taille du disque (ex. : **20 Go**).
-
-6. **Monter l'ISO** :
-   - Dans les paramètres de la VM, va dans **"Storage"**.
-   - Clique sur **"Empty"** sous **"Controller: IDE"**, puis sur l'icône du disque.
-   - Sélectionne **"Choose a disk file"** et accède au fichier **ISO** situé dans le **sous-répertoire** correspondant de ce dépôt.
-
-7. **Démarrer la VM** :
-   - Clique sur **"Start"**.
-   - Suis les instructions pour installer l'OS dans la VM.
+- 🎨 Elle rend Linux plus **accessible** et plus **facile à utiliser**, en particulier pour les débutants.  
+- 🖱️ Par exemple, au lieu de taper `sudo apt install firefox`, tu peux simplement **cliquer** sur une icône pour installer **Firefox** depuis un **"store"** d'applications.
 
 ---
 
-## 🍏 Pour macOS
+## 📀 **Qu'est-ce qu'une distribution Linux ?**
 
-1. **Lance VirtualBox** :
-   - Va dans le dossier **Applications** et ouvre **Oracle VM VirtualBox**.
+Une **distribution Linux** (ou *distro*) est un **système d'exploitation complet** basé sur le **noyau Linux**, auquel on ajoute :
 
-2. **Créer une nouvelle VM** : 
-   - Clique sur **"New"** et suis les mêmes étapes que sur Windows :
-   - Donne un **nom** à ta VM.
-   - Choisis le **type de système d'exploitation** (Linux, Windows, etc.).
-   - Sélectionne la **version appropriée**.
+- 📦 Un **gestionnaire de paquets** pour installer et mettre à jour les logiciels (ex. : APT, YUM, Pacman).
+- 🛠️ Des **outils système** permettant de gérer ton ordinateur (fichiers, réseau, utilisateurs...).
+- 🖥️ Une **interface graphique** (facultative) pour rendre le système plus convivial.
+- 🎯 Une **philosophie spécifique** : certaines distributions privilégient la stabilité, d'autres la légèreté ou encore la sécurité.
 
-3. **Configurer la RAM et le disque dur** :
-   - Alloue la **RAM**.
-   - Crée un disque dur virtuel (**VDI**, dynamique, **20 Go**).
-
-4. **Monter l'image ISO** :
-   - Ouvre les paramètres de la VM.
-   - Va dans **"Storage"**.
-   - Sélectionne **"Empty"** sous le **Controller IDE**.
-   - Clique sur l'icône du disque et choisis **"Choose a disk file"** pour sélectionner l'ISO dans le **sous-répertoire** du dépôt.
-
-5. **Démarrer la VM** :
-   - Clique sur **"Start"**.
-   - Installe l'OS à partir de l'image ISO montée.
+En résumé, chaque distribution propose une **expérience utilisateur différente**, adaptée à des **besoins spécifiques**.
 
 ---
 
+## 🪖 **Principales distributions**
 
-### 🆕 **Créer une nouvelle VM**
+### 💻 **Distributions pour tous les usages :**  
 
-1. **Clique sur "New"** pour démarrer la création d'une nouvelle VM.
+- 🟢 **Debian** : Ultra stable, idéale pour les serveurs et les environnements de production. Moins rapide sur les mises à jour.  
 
-2. **Configurer la VM** :
+- 🟣 **Ubuntu** : Basée sur Debian, conviviale pour les débutants, polyvalente pour desktop, serveur et cloud.  
 
-   - **Nom** : Donne un nom à ta VM (ex. : *"Ubuntu VM"*).
-   - **Type de système** : Choisis le système d'exploitation (ex. : *Linux*).
-   - **Version** : Sélectionne la version exacte (ex. : *Ubuntu 64-bit*).
+- 🔍 **Kali Linux** : Spécialisée pour les tests d'intrusion (Pentesting), avec des outils de sécurité intégrés.  
 
-3. **Allouer la mémoire RAM** :
+- 🍃 **Linux Mint** : Basée sur Ubuntu, intuitive, adaptée aux anciens utilisateurs de Windows.  
 
-   - Définis la quantité de **RAM** (au moins **2 Go** pour un Linux léger).
+- 🧪 **Fedora** : Parrainée par Red Hat, idéale pour les développeurs et tester les nouvelles technologies.  
 
-4. **Créer un disque dur virtuel** :
+- 🟩 **OpenSUSE** : Deux versions : 
+  - **Leap** (stable) 
+  - **Tumbleweed** (rolling release, mises à jour continues).  
 
-   - Sélectionne **"Create a virtual hard disk now"**.
-   - Choisis le format **VDI (VirtualBox Disk Image)**.
-   - Privilégie un **disque dynamique** pour économiser de l'espace.
-   - Défini la **taille du disque** (ex. : **20 Go**).
+- ⚙️ **Arch Linux** : Distribution rolling release, technique et très personnalisable.  
 
-### 💿 **Monter l'ISO depuis le sous-répertoire**
+- 🌳 **Manjaro** : Basée sur Arch, rend l'installation plus accessible avec un installateur graphique.  
 
-1. Va dans les paramètres de **"Storage"**.
+- 🛡️ **CentOS (AlmaLinux/Rocky Linux)** : Anciennement basé sur Red Hat Enterprise Linux (RHEL), remplacé par AlmaLinux et Rocky Linux pour plus de stabilité.  
 
-2. Sélectionne **"Empty"** sous **"Controller: IDE"**.
+---
 
-3. Clique sur l'icône du disque, puis sur **"Choose a disk file"**.
+## 🎯 **Choisir selon les besoins**
 
-4. Accède au fichier **ISO** dans le **sous-répertoire** du dépôt GitHub.
+- 🆕 **Débutants** : Ubuntu, Linux Mint.
+- 💼 **Serveurs/entreprises** : Debian, Ubuntu Server, AlmaLinux, Rocky Linux.
+- 🛡️ **Pentesting/Sécurité** : Kali Linux.
+- 💻 **Développement** : Fedora, Ubuntu.
+- 🛠️ **Personnalisation/Apprentissage** : Arch Linux, Manjaro.
 
+Chaque distribution offre des avantages spécifiques selon que tu privilégies la **stabilité**, la **nouveauté**, la **sécurité** ou la **personnalisation**.  
+Choisis celle qui correspond le mieux à tes besoins ! 🚀😊
 
-### 🚀 **Démarrer la VM**
+---
 
-1. Clique sur **"Start"** pour lancer la machine virtuelle.
+## 🧪 **Découvre ton premier labo virtuel !**
 
-2. Suis les étapes pour **installer le système d'exploitation** dans la VM.
+Prêt à mettre en pratique tout ce que tu viens d'apprendre ?  
 
+👉 Direction notre dépôt **[VIRTUAL-LAB](https://github.com/cyber-dyper/VIRTUAL-LAB)** pour créer ton **premier laboratoire virtuel** !  
 
-### 📁 **Référence aux sous-répertoires d'ISO**
+Tu pourras t'entraîner à installer et utiliser différentes distributions Linux dans un environnement **sécurisé** et **amusant** ! 🥳
 
-Pour téléchargé l'image **ISO** à monter dans **VirtualBox**, consulte les **sous-répertoires** dédiés de ce dépôt :
+---
 
-- `Kali-Linux`
-- `Arch-Linux`
-- `Debian`
-- `Fedora`
-- `Linux-Mint`
-- `Manjaro`
-- `OpenSUSE`
-- `Ubuntu`
+## 📚 **Ressources Utiles**
 
-Chaque répertoire contient une **image ISO prête à l'emploi** pour ta **machine virtuelle** ! 🚀😊
+### 🌍 **Sites officiels des distributions :**
 
+- 🟢 [Debian](https://www.debian.org)  
+- 🟣 [Ubuntu](https://ubuntu.com)  
+- 🔍 [Kali Linux](https://www.kali.org)  
+- 🍃 [Linux Mint](https://linuxmint.com)  
+- 🧪 [Fedora](https://getfedora.org)  
+- 🟩 [OpenSUSE](https://www.opensuse.org)  
+- ⚙️ [Arch Linux](https://archlinux.org)  
+- 🌳 [Manjaro](https://manjaro.org)  
+- 🛡️ [AlmaLinux](https://almalinux.org)  
+- 🛡️ [Rocky Linux](https://rockylinux.org)  
 
-## 📚 Ressources Utiles
+### 🛠️ **Outils supplémentaires :**
 
-🌍 [Site Officiel : VirtualBox.org](https://www.virtualbox.org/wiki/Downloads)
+- 🌐 [VirtualBox - Télécharger](https://www.virtualbox.org/wiki/Downloads)  
+- 🍺 [Homebrew (macOS)](https://brew.sh)  
 
-🍺 [Site Officiel : Brew.sh](https://brew.sh)
+---
 
-
-Bonne virtualisation ! 🥳
+✨ **Bonne virtualisation et bon apprentissage !** 🥳
